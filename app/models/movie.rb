@@ -1,5 +1,4 @@
 class Movie < ActiveRecord::Base
-  def finished?
-    finished_on.present?
-  end
+  scope :finished, ->{ where.not(finished_on: nil) }
+  scope :recent, ->{ where('finished_on > ?', 1.week.ago) }
 end
