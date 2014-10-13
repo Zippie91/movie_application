@@ -11,7 +11,7 @@
 
   <tbody>
     <% @movies.each do |movie| %>
-      <tr>
+      <tr class='<%= "finished" if movie.finished? %>' >
         <td><%= movie.title %></td>
         <td><%= movie.description %></td>
         <td><%= link_to 'Show', movie %></td>

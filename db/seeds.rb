@@ -14,7 +14,7 @@ Movie.create([{
   },
   {
     title: "The Dark Knight",
-    description: "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level."
+    description: "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level.",
     finished_on: nil,
     rating: 1
   }])
