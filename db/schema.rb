@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014083731) do
+ActiveRecord::Schema.define(version: 20141014134111) do
 
   create_table "movies", force: true do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20141014083731) do
     t.date     "finished_on"
     t.integer  "rating"
     t.integer  "tmdbid"
+    t.text     "keywords"
   end
 
 end
