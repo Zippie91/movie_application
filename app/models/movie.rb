@@ -1,7 +1,7 @@
 class Movie < ActiveRecord::Base
   scope :finished, ->{ where.not(finished_on: nil) }
   scope :recent, ->{ where('finished_on > ?', 1.week.ago) }
-  scope :search, ->(keyword){ where(title: keyword) if keyword.present? }
+  scope :search, ->(keyword){ where('keywords LIKE ?', "%#{keyword.downcase}%") if keyword.present? }
 
   before_save :set_keywords
 
