@@ -9,6 +9,5 @@ class ApplicationController < ActionController::Base
 
   def set_config
     @configuration = Tmdb::Configuration.new
-    @configuration.base_url = https://a
   end
 end
