@@ -1,11 +1,7 @@
 class Movie < ActiveRecord::Base
-  def self.search(keyword)
-    if keyword.present?
-      where(title: keyword)
-    else
-      all
-    end
-  end
+  scope :finished, ->{ where.not(finished_on: nil) }
+  scope :recent, ->{ where('finished_on > ?', 1.week.ago) }
+  scope :search, ->(keyword){ where(title: keyword) if keyword.present? }
 
   def finished?
     finished_on.present?
