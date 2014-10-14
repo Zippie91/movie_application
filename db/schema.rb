@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014142828) do
+ActiveRecord::Schema.define(version: 20141014201601) do
 
   create_table "genres", force: true do |t|
     t.string   "name"
@@ -28,9 +28,6 @@ ActiveRecord::Schema.define(version: 20141014142828) do
     t.integer  "rating"
     t.integer  "tmdbid"
     t.text     "keywords"
-    t.integer  "genre_id"
   end
-
-  add_index "movies", ["genre_id"], name: "index_movies_on_genre_id"
 
 end
