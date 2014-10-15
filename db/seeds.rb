@@ -3,6 +3,7 @@ Genre.destroy_all
 
 fiction = Genre.create!(name: 'Fiction')
 non_fiction = Genre.create!(name: 'Non-Fiction')
+drama = Genre.create!(name: 'Drama')
 
 Movie.create!([{
     title: "The Shawshank Redemption",
@@ -10,7 +11,7 @@ Movie.create!([{
     finished_on: 10.days.ago,
     rating: 4,
     tmdbid: 278,
-    genre: non_fiction
+    genres: [non_fiction, drama]
   },
   {
     title: "The Godfather",
@@ -18,7 +19,7 @@ Movie.create!([{
     finished_on: 3.day.ago,
     rating: 3,
     tmdbid: 238,
-    genre: non_fiction
+    genres: [non_fiction]
   },
   {
     title: "The Dark Knight",
@@ -26,7 +27,7 @@ Movie.create!([{
     finished_on: nil,
     rating: 1,
     tmdbid: 155,
-    genre: fiction
+    genres: [fiction]
   }])
 
 p "Created #{Movie.count} movies."

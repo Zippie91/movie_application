@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
   # GET /movies.json
   def index
     @movies = Movie.search(params[:keyword])
+    @genres = Genre.all
   end
 
   # GET /movies/1
