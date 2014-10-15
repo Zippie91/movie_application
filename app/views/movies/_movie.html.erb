@@ -1,0 +1,24 @@
+<li class="row rating-<%= movie.rating %>">
+  <div class="col-sm-3">
+    <a href="#" target="_blank">
+      <%= image_from_tmdb(movie.tmdbid) %>
+    </a>
+    <p class="text-center rating"><strong><%= movie.rating %></strong>/5</p>
+  </div>
+
+  <div class="col-sm-9">
+    <h3><a href="#"><%= movie.title %></a></h3>
+      <p class="text-muted"><em>another title: <%= movie.title %></em></p>
+
+    <div>
+      <p>
+        <%= movie.description %>
+      </p>
+    </div>
+    <span>
+      <% movie.genres.each do |genre| %>
+        <%= link_to genre.name, '#', class: 'label label-primary' %>
+      <% end %>
+    </span>
+  </div>
+</li>
