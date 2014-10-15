@@ -28,9 +28,39 @@
 
   <div class="col-sm-12 movie-form">
     <p>
-      <%= form_for(Movie.new, html: { class: 'horizontal-form' }) do |f| %>
+      <%= form_for(Movie.new, remote: true, html: { class: 'horizontal-form' }) do |f| %>
+        <legend>New Movie</legend>
 
-      <% end %> 
+        <div class="col-sm-5">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Genre</label>
+            <div class="col-sm-10">
+              <%= f.select :genres, @genres.map { |g| [g.name, g.id] }, {}, { multiple: true } %>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :description, class: 'form-control', placeholder: 'Description' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :tmdbid, class: 'form-control', placeholder: 'The Movie Database ID' %>
+          </div>
+          <div class="form-group">
+            <legend>Rating</legend>
+            <% (1..5).each do |rating| %>
+              <label class="radio-inline">
+                <%= rating %><%= f.radio_button :rating, rating %>
+              </label>
+            <% end %>
+          </div>
+          <div class="form-group">
+            <%= f.submit class: 'btn btn-primary' %>
+          </div>
+        </div>
+      <% end %>
     </p>
   </div>
 
