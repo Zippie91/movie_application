@@ -1,0 +1,8 @@
+$('.movie-list').prepend('<%=j render @movie %>');
+
+var form = $('#new_movie');
+form.find('input[type=text]').val('');
+form.find('input[type=radio]').removeAttr('checked');
+form.find('option').removeAttr('selected');
+
+$('.movie-form').toggle();
